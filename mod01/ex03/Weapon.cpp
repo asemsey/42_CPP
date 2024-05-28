@@ -11,7 +11,7 @@ Weapon::~Weapon( void ) {
 
 void	Weapon::setType(std::string type) {
 	_type = type;
-	std::cout << "Weapon type set to " << _type << std::endl;
+	std::cout << "[Weapon type set to " << _type << "]\n";
 }
 
 std::string	Weapon::getType( void ) const {
