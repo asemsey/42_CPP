@@ -20,7 +20,7 @@ int	main( void ) {
 	return (0);
 }
 
-// $> ./a.out
+// (expected output:)
 // Default constructor called
 // Int constructor called
 // Float constructor called
@@ -41,4 +41,3 @@ int	main( void ) {
 // Destructor called
 // Destructor called
 // Destructor called
-// $>
