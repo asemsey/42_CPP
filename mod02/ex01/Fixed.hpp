@@ -8,12 +8,12 @@ class Fixed
 {
 public:
 	Fixed( void );
-	Fixed( Fixed& fixed );
+	Fixed( const Fixed& fixed );
 	Fixed( const int n );
 	Fixed( const float f );
 	~Fixed( void );
 
-	Fixed&	operator=( Fixed& fixed );
+	Fixed&	operator=( const Fixed& fixed );
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );

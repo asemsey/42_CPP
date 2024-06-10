@@ -1,13 +1,14 @@
 #include <iostream>
+#include <string>
 
-char	*ft_upper(char *str)
+std::string	ft_upper(std::string str)
 {
-	char	*s = strdup(str);
-	int		len = strlen(str);
+	std::string s = str;
 
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < (int)str.length(); i++)
 	{
-		s[i] = (char)toupper(str[i]);
+		if (('a' <= str[i] && str[i] <= 'z'))
+			s[i] = (str[i] - 32);
 	}
 	return (s);
 }
@@ -18,8 +19,8 @@ int	main(int argc, char *argv[])
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	for (int i = 1; i < argc; i++)
 	{
-		std::cout << ft_upper(argv[i]);
+		std::cout << ft_upper(std::string(argv[i]));
 	}
-	std::cout << '\n';
+	std::cout << std::endl;
 	return (0);
 }

@@ -4,9 +4,9 @@ Fixed::Fixed( void ) : _number(0) {
 	std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed( Fixed& fixed ) {
+Fixed::Fixed( const Fixed& fixed ) {
 	std::cout << "Copy constructor called\n";
-	_number = fixed.getRawBits();
+	*this = fixed;
 }
 
 Fixed::Fixed( const int n ) {
@@ -16,16 +16,13 @@ Fixed::Fixed( const int n ) {
 
 Fixed::Fixed( const float f ) {
 	std::cout << "Float constructor called\n";
-	// 123.45f
-	// get 123
-	// subtract 123 from f
-	// 123 << fbits???
-	_number = (int)f;
+	_number = roundf(f * (1 << _fbits));
 }
 
-Fixed& Fixed::operator=( Fixed& fixed ) {
+Fixed& Fixed::operator=( const Fixed& fixed ) {
 	std::cout << "Copy assignment operator called\n";
-	_number = fixed.getRawBits();
+	if (this != &fixed)
+		_number = fixed._number;
 	return (*this);
 }
 
@@ -34,11 +31,11 @@ Fixed::~Fixed( void ) {
 }
 
 float	Fixed::toFloat( void ) const {
-	return (float)(_number >> _fbits);
+	return ((float)_number / (1 << _fbits));
 }
 
 int		Fixed::toInt( void ) const {
-	return (int)(_number >> _fbits);
+	return (_number >> _fbits);
 }
 
 int	Fixed::getRawBits( void ) const {
@@ -46,10 +43,10 @@ int	Fixed::getRawBits( void ) const {
 	return _number;
 }
 
-void	Fixed::setRawBits( int const raw ) {
+void	Fixed::setRawBits( const int raw ) {
 	_number = raw;
 }
 
-std::ostream	&operator<<(std::ostream &str, Fixed const &fixed) {
-	return (str << fixed.toFloat());
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed) {
+	return (out << fixed.toFloat());
 }
