@@ -25,7 +25,7 @@ private:
 
 };
 
-Fixed	slope(Point a, Point b);
+float	slope(Point a, Point b);
 bool	bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

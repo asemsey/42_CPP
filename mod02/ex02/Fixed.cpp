@@ -78,27 +78,27 @@ const Fixed&	Fixed::max(const Fixed &f1, const Fixed &f2) {
 
 // Constructors
 Fixed::Fixed( void ) : _number(0) {
-	std::cout << "Default constructor called\n";
+	// std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed( const Fixed& fixed ) {
-	std::cout << "Copy constructor called\n";
+	// std::cout << "Copy constructor called\n";
 	*this = fixed;
 }
 
 Fixed::Fixed( const int n ) {
-	std::cout << "Int constructor called\n";
+	// std::cout << "Int constructor called\n";
 	_number = n << _fbits;
 }
 
 Fixed::Fixed( const float f ) {
-	std::cout << "Float constructor called\n";
+	// std::cout << "Float constructor called\n";
 	_number = roundf(f * (1 << _fbits));
 }
 
 // Destructor
 Fixed::~Fixed( void ) {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }
 
 float	Fixed::toFloat( void ) const {
@@ -110,7 +110,7 @@ int		Fixed::toInt( void ) const {
 }
 
 int	Fixed::getRawBits( void ) const {
-	std::cout << "getRawBits member function called\n";
+	// std::cout << "getRawBits member function called\n";
 	return _number;
 }
 
@@ -121,7 +121,7 @@ void	Fixed::setRawBits( const int raw ) {
 // --------------------------------------------------------- operator overloads
 
 Fixed& Fixed::operator=( const Fixed& f ) {
-	std::cout << "Copy assignment operator called\n";
+	// std::cout << "Copy assignment operator called\n";
 	if (this != &f)
 		_number = f._number;
 	return (*this);

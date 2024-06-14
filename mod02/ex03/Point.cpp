@@ -9,8 +9,8 @@ Point::Point( const Point& p ) : _x(p._x), _y(p._y) {}
 Point::~Point( void ) {}
 
 const Point&	Point::operator=( const Point& p ) {
-	if (this != &p)
-		;
+	if (this != &p) {
+	}
 	return (*this);
 }
 
@@ -20,11 +20,3 @@ bool	Point::operator==( const Point& p ) {
 
 Fixed	Point::get_x( void ) const {return this->_x;}
 Fixed	Point::get_y( void ) const {return this->_y;}
-
-// ---------------------------------------------------------------------------
-
-Fixed	slope(Point a, Point b) {
-	Fixed dy = b.get_y() - a.get_y();
-	Fixed dx = b.get_x() - a.get_x();
-	return (dy / dx);
-}

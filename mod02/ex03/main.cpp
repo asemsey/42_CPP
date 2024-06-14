@@ -3,24 +3,27 @@
 
 int	main( void )
 {
-	Point	p1 = Point(1, 0);
-	Point	p2 = Point(p1);
-	Point	p3;
+	Point	a = Point(1, 0);
+	Point	b;
+	Point	c = Point(1, 3);
+	Point	p = Point(a);
 
-	p2 = p3;//doesnt actually do anything (const)
+	p = b;//doesnt do anything (const)
 
-	std::cout << "p1\t" << p1.get_x() << " " << p1.get_y() << std::endl;//a
-	std::cout << "p2\t" << p2.get_x() << " " << p2.get_y() << std::endl;//==p1
-	std::cout << "p3\t" << p3.get_x() << " " << p3.get_y() << std::endl;//b
+	std::cout << "a\t" << a.get_x() << " " << a.get_y() << std::endl;
+	std::cout << "b\t" << b.get_x() << " " << b.get_y() << std::endl;
+	std::cout << "c\t" << c.get_x() << " " << c.get_y() << std::endl;
+	std::cout << "p\t" << p.get_x() << " " << p.get_y() << std::endl;
 
-	Point	p4 = Point(1, 3);
-	Point	inside = Point(0.99, 1.4555);
+	Point	inside = Point(0.99, 1.4555);//inside
+	// Point	inside = Point(1.1, 1.4555);//outside
+	// Point	inside = Point(1, 1.4555);//edge
+	// Point	inside = Point(1, 3);//vertex
 
-	std::cout << "p4\t" << p4.get_x() << " " << p4.get_y() << std::endl;//c
-	std::cout << "inside\t" << inside.get_x() << " " << inside.get_y() << std::endl;//point
+	std::cout << "inside\t" << inside.get_x() << " " << inside.get_y() << std::endl;
 
 	// triangle check
-	if (bsp(p1, p3, p4, inside))
+	if (bsp(a, b, c, inside))
 		std::cout << "the point is inside the triangle :)\n";
 	else
 		std::cout << "the point is not inside the triangle :(\n";
