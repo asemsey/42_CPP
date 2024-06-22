@@ -14,7 +14,7 @@ int	main( void ) {
 	return (0);
 }
 
-// (expected output:)
+// (expected output from subject:)
 // Default constructor called
 // Copy constructor called
 // Copy assignment operator called // <-- This line may be missing depending on your implementation

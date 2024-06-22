@@ -15,6 +15,8 @@ int	main( void )
 	std::cout << "c\t" << c.get_x() << " " << c.get_y() << std::endl;
 	std::cout << "p\t" << p.get_x() << " " << p.get_y() << std::endl;
 
+	// some examples for checking the bsp function:
+
 	Point	inside = Point(0.99, 1.4555);//inside
 	// Point	inside = Point(1.1, 1.4555);//outside
 	// Point	inside = Point(1, 1.4555);//edge

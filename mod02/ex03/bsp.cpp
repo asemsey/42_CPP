@@ -11,7 +11,7 @@ bool	is_triangle(Point a, Point b, Point c);
 float	area(Point const a, Point const b, Point const c);
 float	slope(Point a, Point b);
 
-// point forms a triange with two points each. if areas add up to the main triangles area
+// point forms a triange with two points each. if areas add up to the main triangle's area
 // the point is inside the triangle (the three triangles together can form the main traingle)
 bool	bsp( Point const a, Point const b, Point const c, Point const point) {
 	if (!is_triangle(a, b, point) || !is_triangle(b, c, point) || !is_triangle(c, a, point))
@@ -19,6 +19,7 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point) {
 	return (area(a, b, point) + area(b, c, point) + area(c, a, point) == area(a, b, c));
 }
 
+//-------------------------------------------------------------------------------------------
 
 float	slope(Point a, Point b) {
 	Fixed dy = b.get_y() - a.get_y();

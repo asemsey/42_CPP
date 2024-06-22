@@ -20,7 +20,7 @@ int	main( void ) {
 	return (0);
 }
 
-// (expected output:)
+// (expected output from subject:)
 // Default constructor called
 // Int constructor called
 // Float constructor called
