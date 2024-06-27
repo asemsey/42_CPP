@@ -17,5 +17,5 @@ Zombie::Zombie( void ) {
 }
 
 Zombie::~Zombie() {
-	std::cout << "deleting " << _name << "...\n";
+	std::cout << "[deleting " << _name << "...]\n";
 }

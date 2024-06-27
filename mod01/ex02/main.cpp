@@ -9,7 +9,7 @@ int	main(void)
 
 	std::cout << "address of string:	" << &brain << std::endl
 			<< "stringPTR:		" << stringPTR << std::endl
-			<< "stringREF:		" << stringREF << std::endl
+			<< "stringREF:		" << &stringREF << std::endl
 			<< "the string:		" << brain << std::endl
 			<< "stringPTR points to:	" << *stringPTR << std::endl
 			<< "stringREF points to:	" << stringREF << std::endl;
